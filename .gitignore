@@ -1,0 +1,5 @@
+# Original high-res source images (kept locally only, optimized versions are used on the site)
+img/ChatGPT Image*.png
+logo/ChatGPT Image*.png
+.DS_Store
+Thumbs.db
