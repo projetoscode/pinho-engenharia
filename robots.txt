@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://projetoscode.github.io/vitorino-pinho-engenharia/sitemap.xml
+Sitemap: https://projetoscode.github.io/pinho-engenharia/sitemap.xml
