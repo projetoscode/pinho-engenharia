@@ -137,16 +137,36 @@
     if (e.key === 'Escape') closeLightbox();
   });
 
-  /* ---------- Contact form -> WhatsApp ---------- */
+  /* ---------- Quote form -> WhatsApp ---------- */
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const message = document.getElementById('message').value.trim();
+      const val = (id) => (document.getElementById(id).value || '').trim();
 
-      const raw = `Olá! Meu nome é ${name}.\nMeu telefone: ${phone}\n\n${message}`;
+      const name = val('name');
+      const phone = val('phone');
+      const email = val('email');
+      const city = val('city');
+      const serviceType = val('serviceType');
+      const propertyType = val('propertyType');
+      const area = val('area');
+      const message = val('message');
+
+      const lines = [
+        `Olá! Gostaria de solicitar um orçamento.`,
+        ``,
+        `Nome: ${name}`,
+        `WhatsApp: ${phone}`,
+      ];
+      if (email) lines.push(`E-mail: ${email}`);
+      if (city) lines.push(`Cidade: ${city}`);
+      if (serviceType) lines.push(`Tipo de serviço: ${serviceType}`);
+      if (propertyType) lines.push(`Tipo de imóvel: ${propertyType}`);
+      if (area) lines.push(`Área aproximada: ${area} m²`);
+      if (message) lines.push(``, `Descrição do projeto:`, message);
+
+      const raw = lines.join('\n');
       window.open(`https://wa.me/5544998094180?text=${encodeURIComponent(raw)}`, '_blank', 'noopener');
     });
   }
