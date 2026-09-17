@@ -147,7 +147,7 @@
       const message = document.getElementById('message').value.trim();
 
       const raw = `Olá! Meu nome é ${name}.\nMeu telefone: ${phone}\n\n${message}`;
-      window.open(`https://wa.me/5544997097675?text=${encodeURIComponent(raw)}`, '_blank', 'noopener');
+      window.open(`https://wa.me/5544998094180?text=${encodeURIComponent(raw)}`, '_blank', 'noopener');
     });
   }
 })();
